@@ -1,0 +1,18 @@
+html 
+  head 
+    title=title
+    link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+    script(src="/bootstrap/js/bootstrap.bundle.min.js")
+  body
+h1=title
+
+form(method="POST" action="/api/productos/guardar")
+    div.form-group
+      label(for="title") Producto:
+      input#title.form-control(type="text", placeholder="Nombre de producto" name="title")
+      label(for="price") Price:
+      input#author.form-control(type="number", placeholder="Price" name="price")
+      label(for="thumbnails") Thumbnails:
+      input#thumbnails.form-control(type="url", placeholder="url de imagen" name="thumbnail")
+      div.form-group
+        button.btn.btn-primary(type="submit" role="submit") Agregar Producto

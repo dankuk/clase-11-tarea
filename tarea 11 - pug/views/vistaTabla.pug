@@ -1,0 +1,26 @@
+html 
+  head 
+    title=title
+    link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+    script(src="/bootstrap/js/bootstrap.bundle.min.js")
+  body
+h1=title
+.container
+        .jumbotron
+        a(href='/api/productos/formulario', class="btn btn-primary") Nuevo Producto
+        table#pickle.table.table-hover.table-striped.table-bordered
+            thead
+                tr
+                    th Id 
+                    th Title
+                    th Price
+                    th thumbnail
+            tbody
+                each n in data
+                    tr
+                        th(scope='row')=n.id
+                        td=n.title
+                        td=n.price
+                        td
+                            img(src=n.thumbnail , alt='some image', style="width: 64px; height: 64px;") 
+                
